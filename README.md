@@ -78,15 +78,26 @@ $ curl http://localhost:8080/api/ \
 
 ## scripts
 
+
+- jsonwebtokenライブラリの検証
 ```bash
 # JWT作成 HS256
-$ node nodejs/scripts/gen_hmac_jwt.js
-{JWT}
+$ node nodejs/scripts/gen_jsonwebtoken_jwt.js
+RS256: {JWT}
+HS256: {JWT}
 
-# JWT作成 RSA256
-$ node nodejs/scripts/gen_rsa256_jwt.js
-{JWT}
+$ node nodejs/scripts/verify_jsonwebtoken_jwt.js {JWT}
+{...}
+```
 
-$ node nodejs/scripts/verify_jwt.js {JWT}
 
+- jsonwebtokenライブラリの検証
+```bash
+# JWT作成 HS256
+$ node nodejs/scripts/gen_jwt-node_jwt.js
+RS256: {JWT}
+HS256: {JWT}
+
+$ node nodejs/scripts/verify_jwt-node_jwt.js {JWT}
+{...}
 ```
