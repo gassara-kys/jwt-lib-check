@@ -9,7 +9,7 @@ var sampleJson = {
   foo: 'bar'
 }
 
-// create RS256 JWT
+// create alg=RS256 JWT
 var rs256token = new jwt_node.Jwt(sampleJson)
       .setSigningAlgorithm('RS256')
       .setSigningKey(secretKey)
@@ -17,10 +17,18 @@ var rs256token = new jwt_node.Jwt(sampleJson)
 
 console.log('RS256: \n' + rs256token);
 
-// create HS256 JWT
+// create alg=HS256 JWT
 var hs256token = new jwt_node.Jwt(sampleJson)
       .setSigningAlgorithm('HS256')
       .setSigningKey(publicKey)
       .compact();
 
 console.log('HS256: \n' + hs256token);
+
+
+// create alg=none JWT
+var noneToken = new jwt_node.Jwt(sampleJson)
+      .setSigningAlgorithm('none')
+      .compact();
+
+console.log('none: \n' + noneToken);

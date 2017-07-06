@@ -17,7 +17,6 @@ jwt_node.verify(token,cert,function(err, verifiedJwt){
   console.log("verifiedJwt: "+ verifiedJwt) // bar
 });
 
-
 var verifier = new jwt_node.Verifier()
       .setSigningKey(cert)
       .verify(token, function (err, verifiedJwt) {

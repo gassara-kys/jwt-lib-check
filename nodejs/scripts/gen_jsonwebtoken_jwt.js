@@ -9,12 +9,17 @@ var sampleJson = {
   foo: 'bar'
 }
 
-// create RS256 JWT
+// create alg=RS256 JWT
 jwt.sign(sampleJson, secretKey, { algorithm: 'RS256' }, function(err, token) {
   console.log('RS256: \n' + token);
 });
 
-// create HS256 JWT
+// create alg=HS256 JWT
 jwt.sign(sampleJson, publicKey, { algorithm: 'HS256' }, function(err, token) {
   console.log('HS256: \n' + token);
+});
+
+// create alg=none JWT
+jwt.sign(sampleJson, publicKey, { algorithm: 'none' }, function(err, token) {
+  console.log('none: \n' + token);
 });
